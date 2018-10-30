@@ -1,0 +1,35 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Task B</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+<h1>Form validation JavaScript</h1>
+<form name="myForm" action="form-submit.php" method="post" novalidate onsubmit="return validateForm()">
+    First Name:<input type="text" name="first name" autofocus required/> <br/>
+    Last Name:<input type="text" name="last name" required/> <br/>
+    Email:<input type="email" name="email" required/> <br/>
+    Phone:<input type="tel" name="phone" placeholder="+358401234567" required size="13"
+                 title="+358401234567" pattern="(?:\+?3584|0)([0-9]){8}"/> <br/>
+    Address:<input type="text" name="address" required/> <br/>
+    Postal code:<input type="text" name="postal code" pattern="[0-9]{5}"/> <br/>
+    Password:<input type="password" name="password" required/> <br/>
+    <input type="submit" value="Submit"/>
+</form>
+<script src="js/form_checking.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>
