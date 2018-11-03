@@ -51,24 +51,75 @@ textarea {
     padding: 0.2em 0;
 }
 
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+}
 
+html {
+    height: 100%;
+}
 
+body {
+    position: relative;
+    height: 100%;
+}
 
+body::after {
+    content: "";
+    background: url('../background.jpeg') center;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
 
+.my_form {
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    border-radius: 5px;
+    border: solid 2px #30c630;
+}
 
+h1{
+    text-align: center;
+    color: white;
+    display: block;
+    background-color: #30c630;
+}
+form{
+    padding-left: 10px;
+}
 
+form div input{
+    margin: 5px;
+}
 
-
-
-
-
-
-
-
+.submit{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    height: 50px;
+    width: 100px;
+    border-radius: 20px;
+}
+.submit:hover{
+    color: white;
+    background-color: #30c630;
+}
 
 /* ==========================================================================
    Media Queries
@@ -79,9 +130,9 @@ textarea {
 }
 
 @media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
+(-o-min-device-pixel-ratio: 5/4),
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 120dpi) {
 
 }
 

@@ -16,19 +16,24 @@
 </head>
 
 <body>
-<h1>Form validation HTML5</h1>
+<div class="my_form">
+    <h1>Form validation HTML5</h1>
 
-<form action="form-submit.php" method="get">
-    First Name:<input type="text" name="first name" autofocus required/> <br/>
-    Last Name:<input type="text" name="last name" required/> <br/>
-    Email:<input type="email" name="email" required/> <br/>
-    Phone:<input type="tel" name="phone" placeholder="+358401234567" required size="13"
-                 title="+358401234567" pattern="(?:\+?3584|0)([0-9]){8}"/> <br/>
-    Address:<input type="text" name="address"/> <br/>
-    Postal code:<input type="text" name="postal code" pattern="[0-9]{5}"/> <br/>
-    Password:<input type="password" name="password" required/> <br/>
-    <input type="submit" value="Submit"/>
-</form>
+    <form action="form-submit.php" method="get">
+        <div class="main_form">
+            First Name:<input type="text" name="first name" autofocus required/> <br/>
+            Last Name:<input type="text" name="last name" required/> <br/>
+            Email:<input style="margin-left: 43px" type="email" name="email" required/> <br/>
+            Phone:<input style="margin-left: 36px" type="tel" name="phone" placeholder="+358401234567"
+                         title="+358401234567" pattern="(?:\+?3584|0)([0-9]){8}" required/> <br/>
+            Address:<input style="margin-left: 24px" type="text" name="address"/> <br/>
+            Postal code:<input style="margin-left: -1px" type="text" name="postal code" pattern="[0-9]{5}"/> <br/>
+            Password:<input style="margin-left: 12px" type="password" name="password" required/><br/>
+        </div>
+        <input class="submit" type="submit" value="Submit"/>
+    </form>
+</div>
+
 
 <script src="js/main.js"></script>
 </body>
