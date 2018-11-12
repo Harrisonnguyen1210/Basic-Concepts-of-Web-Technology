@@ -13,19 +13,35 @@
 </li>
 */
 // After the loop print the HTML into <ul> element using innerHTML.
-const xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = showImages;
-xhttp.open('GET', 'images.json', true);
-xhttp.send();
 
-function showImages() {
-    if (xhttp.readyState === 4 && xhttp.status === 200) {
-        let data = JSON.parse(xhttp.responseText);
-        for (let i = 0; i < data.length; i++) {
-            document.querySelector(
-                'ul').innerHTML += `<li><figure><a href="img/original/${data[i].mediaUrl}">
-                                  <img src="img/thumbs/${data[i].mediaThumb}"></a><figcaption>
-                                  <h3>Picture ${i+1}</h3></figcaption></figure></li>`;
-        }
+//This is for ajax:
+// const xhttp = new XMLHttpRequest();
+// xhttp.onreadystatechange = showImages;
+// xhttp.open('GET', 'images.json', true);
+// xhttp.send();
+//
+// function showImages() {
+//     if (xhttp.readyState === 4 && xhttp.status === 200) {
+//         let data = JSON.parse(xhttp.responseText);
+//         for (let i = 0; i < data.length; i++) {
+//             document.querySelector(
+//                 'ul').innerHTML += `<li><figure><a href="img/original/${data[i].mediaUrl}">
+//                                   <img src="img/thumbs/${data[i].mediaThumb}"></a><figcaption>
+//                                   <h3>Picture ${i+1}</h3></figcaption></figure></li>`;
+//         }
+//     }
+// }
+
+//Using fetch:
+const showImages = (json) => {
+    for(let i = 0; i<json.length; i++){
+        document.querySelector('ul').innerHTML += `<li><figure><a href="img/original/${json[i].mediaUrl}">
+                                   <img src="img/thumbs/${json[i].mediaThumb}"></a><figcaption>
+                                   <h3>Picture ${i+1}</h3></figcaption></figure></li>`;
     }
-}
+};
+fetch('images.json').then((response) => {
+    return response.json();
+}).then((json) => {
+    showImages(json);
+});
